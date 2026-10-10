@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+[project]
+name = "nerfusion"
+version = "0.1.0"
+description = "3D Gaussian Splatting for real-time novel view synthesis"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Sherif Abd El-Rady", email = "sherifabdelrady@gmail.com" }]
+keywords = ["gaussian-splatting","nerf","novel-view-synthesis","3d-reconstruction","pytorch","cuda"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["torch>=2.0","open3d>=0.17","plyfile","scipy","pillow","tqdm","numpy"]
+[project.urls]
+Homepage = "https://sherifabdelrady.github.io/cv-portfolio/"
+Repository = "https://github.com/sherifabdelrady/nerfusion"
+[tool.ruff]
+line-length = 120
