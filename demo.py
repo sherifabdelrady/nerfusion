@@ -1,5 +1,8 @@
+﻿# NOTE: Full 3DGS rendering requires CUDA rasterizer and a trained checkpoint.
+# Install: pip install git+https://github.com/graphdeco-inria/gaussian-splatting
+
 """
-NeRFusion Demo — render orbit video from a trained 3DGS checkpoint.
+NeRFusion Demo â€” render orbit video from a trained 3DGS checkpoint.
 Usage: python demo.py --model ./output/my_scene --mode orbit [--output orbit.mp4]
 """
 import argparse, math, os
@@ -11,17 +14,17 @@ def render_orbit(model_path: str, n_frames: int = 120, output: str = "orbit.mp4"
     # In full implementation: load Gaussian parameters from .ply
     # and run CUDA tile rasterizer
     print("Checkpoint structure (example):")
-    print("  xyz:       (N, 3)  — Gaussian centres")
-    print("  features:  (N, 48) — SH coefficients (degree 3)")
-    print("  opacity:   (N, 1)  — per-Gaussian opacity")
-    print("  scaling:   (N, 3)  — log-scale")
-    print("  rotation:  (N, 4)  — quaternion")
+    print("  xyz:       (N, 3)  â€” Gaussian centres")
+    print("  features:  (N, 48) â€” SH coefficients (degree 3)")
+    print("  opacity:   (N, 1)  â€” per-Gaussian opacity")
+    print("  scaling:   (N, 3)  â€” log-scale")
+    print("  rotation:  (N, 4)  â€” quaternion")
     print(f"\nRendering {n_frames}-frame orbit...")
     for i in range(n_frames):
         angle = 2 * math.pi * i / n_frames
         # Camera pose would be computed here
         if i % 20 == 0:
-            print(f"  Frame {i:3d}/{n_frames} | angle {math.degrees(angle):.1f}°")
+            print(f"  Frame {i:3d}/{n_frames} | angle {math.degrees(angle):.1f}Â°")
     print(f"\nOutput would be saved to: {output}")
     print("Run: python train.py --source ./data/my_scene to train first.")
 
